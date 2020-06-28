@@ -1,4 +1,3 @@
 RewriteEngine On
-RewriteCond %{SERVER_PORT} ^443$ [OR]
-RewriteCond %{HTTPS} =on
-RewriteRule ^(.*)$ http://showcasepro.online//$1 [R=301,L]
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
